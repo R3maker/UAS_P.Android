@@ -1,0 +1,316 @@
+ScreenManager:
+    LoginScreen:
+    HomeScreen:
+    SignupScreen:
+    ProdukScreen:
+    KontakScreen:
+    TransaksiScreen:
+    AdminScreen:
+
+<LoginScreen>: 
+    name: 'Login'
+    btnLogin_ : btnLogin
+    txtUsername_ : txtUsername
+    txtPassword_ : txtPassword
+    
+    TextInput:
+        id: txtUsername
+        pos_hint: {'center_x':0.5,'center_y':0.8}
+        size_hint: (.2, None)
+        height: 30
+        multiline: False
+        text: 'Username'
+    
+    TextInput:
+        id: txtPassword
+        pos_hint: {'center_x':0.5,'center_y':0.7}
+        size_hint: (.2, None)
+        height: 30
+        multiline: False
+        text: 'Password'
+
+    MDRectangleFlatButton:
+        id: btnLogin
+        text: 'Login'
+        pos_hint: {'center_x':0.5,'center_y':0.6}
+        on_press: 
+            root.manager.transition.direction = 'left'
+            root.doLogin()  
+
+    MDRectangleFlatButton:
+        text: 'Signup'
+        pos_hint: {'center_x':0.5,'center_y':0.53}
+        on_press: 
+            root.manager.transition.direction = 'left'
+            root.manager.current = 'Signup'
+
+<HomeScreen>:
+    name: 'Beranda'
+    MDLabel:
+        text: 'Beranda'
+        halign: 'center'
+    MDRectangleFlatButton:
+        text: 'Back'
+        pos_hint: {'center_x':0.5,'center_y':0.1}
+        on_press: 
+            root.manager.transition.direction = 'right'
+            root.manager.current = 'Login'
+
+    MDRectangleFlatButton:
+        id: btnproduk
+        text: 'Produk'
+        pos_hint: {'center_x':0.5,'center_y':0.46}
+        on_press: 
+            root.manager.transition.direction = 'left'
+            root.manager.current = 'Produk'
+    
+    MDRectangleFlatButton:
+        id: btnkontak
+        text: 'Kontak'
+        pos_hint: {'center_x':0.5,'center_y':0.39}
+        on_press: 
+            root.manager.transition.direction = 'left'
+            root.manager.current = 'Kontak'
+    
+    MDRectangleFlatButton:
+        id: btntransaksi
+        text: 'Transaksi'
+        pos_hint: {'center_x':0.5,'center_y':0.32}
+        on_press: 
+            root.manager.transition.direction = 'left'
+            root.manager.current = 'Transaksi'
+    
+    MDRectangleFlatButton:
+        id: btnadmin
+        text: 'Admin'
+        pos_hint: {'center_x':0.5,'center_y':0.25}
+        on_press: 
+            root.manager.transition.direction = 'left'
+            root.manager.current = 'Admin'
+
+        
+<SignupScreen>:
+    name: 'Signup'
+    btnSave_SU : btnSave
+    txtUsername_SU : txtUsername
+    txtPassword_SU : txtPassword
+    
+    MDLabel:
+        text: 'SignUp'
+        halign: 'center'
+        
+    MDRectangleFlatButton:
+        text: 'Back'
+        pos_hint: {'center_x':0.5,'center_y':0.1}
+        on_press: 
+            root.manager.transition.direction = 'right'
+            root.manager.current = 'Login'
+    
+    TextInput:
+        id: txtUsername
+        pos_hint: {'center_x':0.5,'center_y':0.8}
+        size_hint: (.2, None)
+        height: 30
+        multiline: False
+        text: 'Username_SU'
+    
+    TextInput:
+        id: txtPassword
+        pos_hint: {'center_x':0.5,'center_y':0.7}
+        size_hint: (.2, None)
+        height: 30
+        multiline: False
+        text: 'Password_SU'
+    
+    MDRectangleFlatButton:
+        id: btnSave
+        text: 'Save'
+        pos_hint: {'center_x':0.5,'center_y':0.6}
+        on_press: root.doSaveSignUp() 
+
+
+<ProdukScreen>:
+    name: 'Produk'
+    btnSave_P : btnSave
+    txtnama_P : txtNama
+    txtharga_P : txtHarga
+    
+    MDLabel:
+        text: 'Produk'
+        halign: 'center'
+        
+    MDRectangleFlatButton:
+        text: 'Back'
+        pos_hint: {'center_x':0.5,'center_y':0.1}
+        on_press: 
+            root.manager.transition.direction = 'right'
+            root.manager.current = 'Beranda'
+    
+    TextInput:
+        id: txtNama
+        pos_hint: {'center_x':0.5,'center_y':0.8}
+        size_hint: (.2, None)
+        height: 30
+        multiline: False
+        text: 'Nama Produk'
+    
+    TextInput:
+        id: txtHarga
+        pos_hint: {'center_x':0.5,'center_y':0.7}
+        size_hint: (.2, None)
+        height: 30
+        multiline: False
+        text: 'Harga Produk'
+    
+    MDRectangleFlatButton:
+        id: btnSave
+        text: 'Save'
+        pos_hint: {'center_x':0.5,'center_y':0.6}
+        on_press: root.doProduk() 
+
+
+
+<KontakScreen>:
+    name: 'Kontak'
+    btnSave_k : btnSave
+    txtnama_K : txtNama
+    txtemail_K : txtEmail
+    txtkritik_k : txtKritik
+        
+    MDRectangleFlatButton:
+        text: 'Back'
+        pos_hint: {'center_x':0.5,'center_y':0.1}
+        on_press: 
+            root.manager.transition.direction = 'right'
+            root.manager.current = 'Beranda'
+    
+    TextInput:
+        id: txtNama
+        pos_hint: {'center_x':0.5,'center_y':0.8}
+        size_hint: (.2, None)
+        height: 30
+        multiline: False
+        text: 'Nama'
+    
+    TextInput:
+        id: txtEmail
+        pos_hint: {'center_x':0.5,'center_y':0.7}
+        size_hint: (.2, None)
+        height: 30
+        multiline: False
+        text: 'Email'
+    
+    TextInput:
+        id: txtKritik
+        pos_hint: {'center_x':0.5,'center_y':0.6}
+        size_hint: (.2, None)
+        height: 30
+        multiline: False
+        text: 'Kritik'
+
+    MDRectangleFlatButton:
+        id: btnSave
+        text: 'Save'
+        pos_hint: {'center_x':0.5,'center_y':0.5}
+        on_press: root.doKontak() 
+
+<TransaksiScreen>:
+    name: 'Transaksi'
+    btnSave_ : btnSave
+    txtidt_ : txtidt
+    txtuser_ : txtuser
+    txtidp_ : txtidp
+    txtharga_ : txtharga
+    txtjumlah_ : txtjumlah
+        
+    MDRectangleFlatButton:
+        text: 'Back'
+        pos_hint: {'center_x':0.5,'center_y':0.1}
+        on_press: 
+            root.manager.transition.direction = 'right'
+            root.manager.current = 'Beranda'
+    
+    TextInput:
+        id: txtidt
+        pos_hint: {'center_x':0.5,'center_y':0.8}
+        size_hint: (.2, None)
+        height: 30
+        multiline: False
+        text: 'id transaksi'
+    
+    TextInput:
+        id: txtuser
+        pos_hint: {'center_x':0.5,'center_y':0.7}
+        size_hint: (.2, None)
+        height: 30
+        multiline: False
+        text: 'username'
+    
+    TextInput:
+        id: txtidp
+        pos_hint: {'center_x':0.5,'center_y':0.6}
+        size_hint: (.2, None)
+        height: 30
+        multiline: False
+        text: 'id produk'
+    
+    TextInput:
+        id: txtharga
+        pos_hint: {'center_x':0.5,'center_y':0.5}
+        size_hint: (.2, None)
+        height: 30
+        multiline: False
+        text: 'harga'
+    
+    TextInput:
+        id: txtjumlah
+        pos_hint: {'center_x':0.5,'center_y':0.4}
+        size_hint: (.2, None)
+        height: 30
+        multiline: False
+        text: 'jumlah'
+
+    MDRectangleFlatButton:
+        id: btnSave
+        text: 'Save'
+        pos_hint: {'center_x':0.5,'center_y':0.3}
+        on_press: root.doTransaksi() 
+
+<AdminScreen>:
+    name: 'Admin'
+    btnSave_SU : btnSave
+    txtUsername_AD : txtUsername
+    txtPassword_AD : txtPassword
+    
+    MDLabel:
+        text: 'Admin'
+        halign: 'center'
+        
+    MDRectangleFlatButton:
+        text: 'Back'
+        pos_hint: {'center_x':0.5,'center_y':0.1}
+        on_press: 
+            root.manager.transition.direction = 'right'
+            root.manager.current = 'Beranda'
+    
+    TextInput:
+        id: txtUsername
+        pos_hint: {'center_x':0.5,'center_y':0.8}
+        size_hint: (.2, None)
+        height: 30
+        multiline: False
+        text: 'Username'
+    
+    TextInput:
+        id: txtPassword
+        pos_hint: {'center_x':0.5,'center_y':0.7}
+        size_hint: (.2, None)
+        height: 30
+        multiline: False
+        text: 'Password'
+    
+    MDRectangleFlatButton:
+        id: btnSave
+        text: 'Save'
+        pos_hint: {'center_x':0.5,'center_y':0.6}
+        on_press: root.doSaveAdmin() 
