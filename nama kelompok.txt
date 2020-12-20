@@ -7,4 +7,13 @@ Oktavianus Wisnu Cahyono
 
 
 arahan 
-login terlebih dahulu, baru bisa input tabel yang lain
+path nge paste API_FIX_ALL.php nya harus di htdocs/pkm. (tinggal buat folder pkm di dalam htdocs terus paste API_FIX_ALL.php nya didalam folder pkm tadi yang sudah dibuat).
+login terlebih dahulu, baru bisa input tabel yang lain.
+
+
+
+
+catatan 
+PENTING
+-> MASIH TERDAPAT ERROR PADA HOME.py TETAPI SEMUA INPUTAN YANG DIINPUT TELAH DAPAT MASUK KE DALAM DATABASE YANG TERKONEKSI OLEH API.
+-> WE TRY OUR BEST.
